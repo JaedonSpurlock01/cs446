@@ -19,7 +19,7 @@ export const Hero = () => {
               </p>
             </div>
             <Button
-              className="bg-white text-blue-500 hover:bg-gray-100"
+              className="bg-white text-blue-500 hover:bg-gray-300"
               size="lg"
             >
               Get Started
@@ -27,7 +27,7 @@ export const Hero = () => {
           </div>
         </section>
         {/* Features Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
+        <section className="w-full pt-6 md:pt-12 lg:pt-16 bg-gray-100">
           <div className="w-full px-4 md:px-6 mx-auto">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12">
               Key Features
