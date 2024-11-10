@@ -1,15 +1,19 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import { Hero } from "./components/main/hero";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from "./pages/home-page";
+import CreatePage from './pages/create-page';
+import AccountPage from './pages/account-page';
+import ViewPage from './pages/view-page';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <Hero />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/account" element={<AccountPage />} />
+        <Route path="/create" element={<CreatePage/>} />
+        <Route path="/view/:id" element={<ViewPage />} />
+      </Routes>
+    </Router>
   );
 }
 
