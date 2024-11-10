@@ -7,8 +7,11 @@ import {
 import { Button } from "../ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Brush, Code, Layers } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export const Hero = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="flex flex-col min-h-screen justify-center items-center">
       <main className="flex-grow w-full">
@@ -47,6 +50,7 @@ export const Hero = () => {
             <Button
               className="bg-white text-blue-500 hover:bg-gray-300"
               size="lg"
+              onClick={() => navigate("/create")}
             >
               Get Started
             </Button>
