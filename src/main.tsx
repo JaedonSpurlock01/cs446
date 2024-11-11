@@ -5,6 +5,7 @@ import App from "./App.tsx";
 
 import { ClerkProvider } from "@clerk/clerk-react";
 import { Footer } from "./components/main/footer.tsx";
+import { Header } from "./components/main/header.tsx";
 
 // CLERK PUBLISHABLE KEY TO MANAGE USERS
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
@@ -16,6 +17,7 @@ if (!PUBLISHABLE_KEY) {
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
+      <Header />
       <App />
       <Footer />
     </ClerkProvider>

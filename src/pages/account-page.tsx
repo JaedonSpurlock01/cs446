@@ -1,8 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { SignInButton, useUser, SignedIn, UserButton } from "@clerk/clerk-react";  // Import SignedIn component
+import {
+  SignInButton,
+  useUser,
+  SignedIn,
+  UserButton,
+} from "@clerk/clerk-react"; // Import SignedIn component
 import { useNavigate } from "react-router-dom";
-import { Ellipsis } from 'lucide-react';
+import { Ellipsis } from "lucide-react";
 
 export default function AccountPage() {
   const { isSignedIn, user } = useUser();
@@ -39,22 +44,6 @@ export default function AccountPage() {
       <div className="bg-gray-100 overflow-hidden shadow-lg mb-8 w-full">
         <div className="bg-gradient-to-r from-blue-600 to-blue-200 h-48 flex flex-col justify-center items-center relative">
           <h1 className="text-4xl font-semibold text-white">Your Account</h1>
-          
-          {/* User Avatar and Button */}
-          <SignedIn>
-            <div className="absolute top-4 right-4">
-              <UserButton
-                appearance={{
-                  elements: {
-                    userButtonAvatarBox: {
-                      width: "3rem",
-                      height: "3rem",
-                    },
-                  },
-                }}
-              />
-            </div>
-          </SignedIn>
 
           {user?.imageUrl && (
             <img
@@ -70,13 +59,15 @@ export default function AccountPage() {
 
         {/* Username and Email */}
         <div className="pt-24 pb-6 px-8 text-center flex flex-col items-center justify-center relative mb-4">
-          <h2 className="text-3xl font-bold">{user?.fullName || "User Name"}</h2>
-          <p className="text-gray-600 text-lg">{user?.primaryEmailAddress?.emailAddress || "user@example.com"}</p>
+          <h2 className="text-3xl font-bold">
+            {user?.fullName || "User Name"}
+          </h2>
+          <p className="text-gray-600 text-lg">
+            {user?.primaryEmailAddress?.emailAddress || "user@example.com"}
+          </p>
 
           {/* Edit Button */}
-          <Button
-            className="mt-4 bg-blue-500 text-white hover:bg-blue-600"
-          >
+          <Button className="mt-4 bg-blue-500 text-white hover:bg-blue-600">
             Edit Account
           </Button>
         </div>
@@ -94,7 +85,7 @@ export default function AccountPage() {
             <div
               key={index}
               className="border p-6 shadow-md hover:bg-slate-200 cursor-pointer rounded-md flex justify-between items-center relative"
-              onClick={(e) => e.stopPropagation()} 
+              onClick={(e) => e.stopPropagation()}
             >
               <p className="text-lg">{profile}</p>
               <Ellipsis
@@ -103,7 +94,9 @@ export default function AccountPage() {
               />
               {activeDropdown === index && (
                 <div className="absolute right-0 mt-2 w-40 bg-white border border-gray-300 shadow-lg rounded-md z-10 p-2">
-                  <p className="p-2 hover:bg-gray-100 cursor-pointer">Delete Profile</p>
+                  <p className="p-2 hover:bg-gray-100 cursor-pointer">
+                    Delete Profile
+                  </p>
                 </div>
               )}
             </div>
