@@ -21,7 +21,7 @@ export default function AccountPage() {
 
   if (!isSignedIn) {
     return (
-      <section className="w-full h-[50rem] flex flex-col justify-center items-center gap-4 px-4">
+      <section className="flex flex-col min-h-screen justify-center items-center">
         <p className="text-2xl font-semibold tracking-tighter text-neutral-800">
           You must be signed in to view an account and edit profiles
         </p>

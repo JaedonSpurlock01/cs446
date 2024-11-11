@@ -5,7 +5,7 @@ export const Footer = () => {
     <>
       {/* Footer */}
       <footer className="w-full py-6 bg-gradient-to-r from-blue-200 to-blue-600 rounded-lg p-6 text-white">
-        <div className="container px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
               <p>&copy; 2024 Portfolio Creator. All rights reserved.</p>

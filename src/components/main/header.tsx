@@ -30,7 +30,7 @@ export const Header = () => {
   const isLoading = !auth.isLoaded;
 
   return (
-    <div className="h-20 w-screen flex items-center justify-between px-4 sm:px-20">
+    <div className="h-20 w-full flex items-center justify-between px-4 sm:px-20">
       <div
         className="flex items-center gap-2 hover:cursor-pointer"
         onClick={() => window.location.replace("/")} // useNavigate doesn't work because were not inside the wrapper of react-router-dom
