@@ -8,7 +8,7 @@ export default function CreatePage() {
 
   if (!user.isSignedIn) {
     return (
-      <section className="w-full h-[50rem] flex flex-col justify-center items-center gap-4">
+      <section className="w-full min-h-screen flex flex-col justify-center items-center gap-4">
         <p className="text-2xl font-semibold tracking-tighter text-neutral-800">
           You must be signed in to create a profile
         </p>
@@ -26,7 +26,7 @@ export default function CreatePage() {
   }
 
   return (
-    <section className="w-full h-[50rem] flex flex-col justify-center items-center gap-4">
+    <section className="w-full min-h-screen flex flex-col justify-center items-center gap-4">
       <h1 className="text-2xl font-semibold tracking-tighter text-neutral-800">
         Create a portfolio
       </h1>
