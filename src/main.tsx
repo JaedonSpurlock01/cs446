@@ -17,9 +17,13 @@ if (!PUBLISHABLE_KEY) {
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
-      <Header />
-      <App />
-      <Footer />
+      <main className="flex flex-col min-h-screen">
+        <div className="flex-grow">
+          <Header />
+          <App />
+        </div>
+        <Footer />
+      </main>
     </ClerkProvider>
   </StrictMode>
 );

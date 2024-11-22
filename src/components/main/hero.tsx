@@ -34,13 +34,15 @@ const AnimatedCounter = ({
       { threshold: 0.5 }
     );
 
-    if (countRef.current) {
-      observer.observe(countRef.current);
+    const currentNode = countRef.current;
+
+    if (currentNode) {
+      observer.observe(currentNode);
     }
 
     return () => {
-      if (countRef.current) {
-        observer.unobserve(countRef.current);
+      if (currentNode) {
+        observer.unobserve(currentNode);
       }
     };
   }, [end, duration]);
@@ -51,20 +53,6 @@ const AnimatedCounter = ({
 export const Hero = () => {
   const navigate = useNavigate();
   const [qrVisible, setQrVisible] = useState(false);
-  const [showScrollTop, setShowScrollTop] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 300);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
 
   return (
     <div className="flex flex-col min-h-screen justify-center items-center">
@@ -160,7 +148,7 @@ export const Hero = () => {
                 ].map((feature, index) => (
                   <Card
                     key={index}
-                    className="group hover:shadow-lg transition-shadow duration-300 transform hover:scale-105 transition-transform"
+                    className="group hover:shadow-lg duration-300 transform hover:scale-105 transition-transform"
                   >
                     <CardHeader>
                       <feature.icon className="w-10 h-10 text-blue-500 mb-2 group-hover:animate-bounce" />
